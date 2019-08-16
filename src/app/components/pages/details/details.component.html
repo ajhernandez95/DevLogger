@@ -1,0 +1,27 @@
+<button (click)="goBack()" class="btn btn-dark mt-3">Back</button>
+<div class="mt-4">
+  <div class="card card-body">
+    <h3>{{ log.title }}</h3>
+    <!-- TODO: Work on changing h3 into an input to edit the current post -->
+    <input
+      *ngIf="isEditState"
+      type="text"
+      class="form-control"
+      [(ngModel)]="log.title"
+      name="title"
+    />
+    <p class="lead">{{ log.body }}</p>
+    <textarea
+      *ngIf="isEditState"
+      class="form-control mb-2"
+      [(ngModel)]="log.body"
+      name="body"
+    ></textarea>
+    <button *ngIf="!isEditState" (click)="edit()" class="btn btn-warning">
+      Edit
+    </button>
+    <button *ngIf="isEditState" (click)="update()" class="btn btn-success">
+      Update Log
+    </button>
+  </div>
+</div>

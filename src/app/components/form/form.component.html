@@ -1,0 +1,30 @@
+<h1 class="text-center display-4 mt-2">Devloper Logs</h1>
+<div class="card card-body mt-4">
+  <form #logForm="ngForm">
+    <h2 class="text-center">New Log</h2>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        [(ngModel)]="log.title"
+        #spy
+      />
+    </div>
+    <div class="form-group">
+      <label for="body">Body</label>
+      <textarea
+        class="form-control"
+        id="body"
+        name="body"
+        [(ngModel)]="log.body"
+      ></textarea>
+    </div>
+    <button (click)="submitLog()" class="btn btn-block btn-dark bg-dark">
+      Add Log
+    </button>
+  </form>
+</div>
+<!-- <app-logs (logAdded)="onAddLog($event)"></app-logs> -->

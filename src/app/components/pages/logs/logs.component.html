@@ -1,0 +1,14 @@
+<app-form (logAdded)="onAddLog($event)"></app-form>
+<div class="mt-5">
+  <div class="card card-body mt-3" *ngFor="let log of logs">
+    <div class="d-flex justify-content-between align-items-center">
+      <a routerLink="/details/{{ log.id }}" style="font-size: 1.5rem">{{
+        log.title
+      }}</a>
+      <span class="lead" style="color: #777">{{ log.date | date }}</span>
+      <button (click)="removeLog(log)" class="btn btn-danger">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
